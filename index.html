@@ -52,47 +52,62 @@
     </script>
   </head>
   <body>
-    
     <header class="header">
       <nav class="navbar section-content" aria-label="Navegación principal">
-        <!-- Header logo -->
         <div class="navbar-logo">
-          <a href="#">
+          <a href="#" aria-label="Ir al inicio">
             <img
               class="logo-img"
               src="assets/Logo.webp"
-              alt="logo conni sassali - consultoría psicológica (counseling)"
+              alt="Conni Sassali - Consultoría psicológica (counseling)"
             />
           </a>
         </div>
-        <!-- End Header logo -->
+        <div id="nav-menu" class="nav-menu-wrapper">
+          <button
+            class="nav-toggle-close"
+            id="nav-toggle-close"
+            aria-label="Cerrar menú"
+          >
+            <span
+              class="material-symbols-outlined icon-close"
+              aria-hidden="true"
+              >close</span
+            >
+          </button>
 
-        <ul id="nav-menu" class="nav-menu">
-          <button class="nav-toggle-close" id="nav-toggle-close">
-            <span class="material-symbols-outlined icon-close"> close</span>
-          </button>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sobre mi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nuestro espacio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Consultas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Propuesta grupal</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Preguntas</a>
-          </li>
-        </ul>
-         <button class="nav-toggle-open" id="nav-toggle-open">
-            <span class="material-symbols-outlined icon-menu"> menu</span>
-          </button>
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Sobre mi</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nuestro espacio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Consultas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Propuesta grupal</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Preguntas</a>
+            </li>
+          </ul>
+        </div>
+
+        <button
+          class="nav-toggle-open"
+          id="nav-toggle-open"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="material-symbols-outlined icon-menu" aria-hidden="true"
+            >menu</span
+          >
+        </button>
       </nav>
     </header>
-
 
     <section>
       <h1>¿Hablamos?</h1>
