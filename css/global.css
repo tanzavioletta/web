@@ -1,9 +1,61 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --font-primary: font-family: "Montserrat", sans-serif;
+  --bg-primary: #f4f4f6; /* Gris muy claro/Hueso para el fondo principal */
+  --bg-secondary: #ebebef; /* Un tono ligeramente más oscuro para secciones */
+  --text-main: #2c2e33; /* Gris casi negro (base de la lámpara) para textos */
+  --text-muted: #6b6d76; /* Para textos secundarios o subtítulos */
+  --white-color: #fff; /* Colores de Acento (Mobiliario) */
+  --accent-yellow: #f5d061; /* Pantalla de la lámpara */
+  --accent-orange: #e68a53; /* Sillón naranja */
+  --accent-purple: #a282b8; /* Sillón morado */
+  --accent-magenta: #d15379; /* Cojín fucsia */
+  --accent-brown: #8e5b41; /* Patas de madera de los sillones */
+
+  /* Font - size */
+  --font-size-s: 0.9rem;
+  --font-size-n: 1rem;
+  --font-size-m: 1.12rem;
+  --font-size-l: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.3rem;
+
+  /* Font weight */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Border radius */
+  --border-radius-s: 8px;
+  --border-radius-m: 30px;
+  --border-radius-circle: 50%;
+
+  /* Max width */
+  --site-max-width: 1200px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: var(--font-primary);
+}
+ul {
+  list-style: none;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  width: 100%;
 }

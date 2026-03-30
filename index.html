@@ -52,58 +52,53 @@
     </script>
   </head>
   <body>
+    
     <header class="header">
-      <nav class="nav" aria-label="Navegación principal">
+      <nav class="navbar section-content" aria-label="Navegación principal">
         <!-- Header logo -->
-        <div class="logo">
+        <div class="navbar-logo">
           <a href="#">
             <img
               class="logo-img"
-              src="assets/logo-conni_sassali.jpeg"
+              src="assets/Logo.webp"
               alt="logo conni sassali - consultoría psicológica (counseling)"
-              width="150"
-              height="150"
             />
           </a>
         </div>
         <!-- End Header logo -->
-        <!-- Toggle button -->
-        <button
-          id="nav-toggle"
-          class="nav-toggle"
-          aria-label="Abrir menú de navegación"
-          aria-expanded="false"
-          aria-controls="mobile-menu-wrapper"
-        >
-          <span class="material-symbols-outlined icon-menu"> menu </span>
-          <span class="material-symbols-outlined icon-close"> close</span>
-        </button>
-        <!-- End toggle button -->
-        <div class="wrapper-links" id="mobile-wrapper">
-          <ul id="nav-links" class="nav-links">
-            <li class="nav-link">
-              <a href="#">Sobre mi</a>
-            </li>
-            <li class="nav-link">
-              <a href="#">Nuestro espacio</a>
-            </li>
-            <li class="nav-link">
-              <a href="#">Como funciona</a>
-            </li>
-            <li class="nav-link">
-              <a href="#">Propuesta grupal</a>
-            </li>
-            <li class="nav-link">
-              <a href="#">Preguntas frecuentes</a>
-            </li>
-          </ul>
-        </div>
+
+        <ul id="nav-menu" class="nav-menu">
+          <button class="nav-toggle-close" id="nav-toggle-close">
+            <span class="material-symbols-outlined icon-close"> close</span>
+          </button>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sobre mi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Nuestro espacio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Consultas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Propuesta grupal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Preguntas</a>
+          </li>
+        </ul>
+         <button class="nav-toggle-open" id="nav-toggle-open">
+            <span class="material-symbols-outlined icon-menu"> menu</span>
+          </button>
       </nav>
     </header>
 
+
     <section>
       <h1>¿Hablamos?</h1>
+      <!-- Toggle button -->
 
+      <!-- End toggle button -->
       <p>Espacio de escucha activa y acompañamiento emocional.</p>
 
       <p>
