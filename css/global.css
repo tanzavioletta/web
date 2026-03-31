@@ -11,6 +11,8 @@
   --accent-purple: #a282b8; /* Sillón morado */
   --accent-magenta: #d15379; /* Cojín fucsia */
   --accent-brown: #8e5b41; /* Patas de madera de los sillones */
+  --green-color: #20b959;
+  --dark-green-color: #128c7e;
 
   /* Font - size */
   --font-size-s: 0.9rem;
@@ -33,6 +35,8 @@
 
   /* Max width */
   --site-max-width: 1200px;
+
+  --letter-spacing: 0.15rem;
 }
 * {
   margin: 0;
@@ -54,6 +58,13 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+.btn {
+  text-transform: uppercase;
+  color: var(--white-color);
+  padding: 0.375rem 0.75rem;
+  letter-spacing: var(--letter-spacing);
 }
 
 img {
