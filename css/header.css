@@ -3,7 +3,7 @@
   padding: 0 1rem;
   position: sticky;
   top: 0;
-  z-index: 100; 
+  z-index: 100;
 }
 
 .section-content {
@@ -49,7 +49,7 @@
   font-size: var(--font-size-n);
   padding: 0.7rem 1.1rem;
   border-radius: var(--border-radius-m);
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease;
   letter-spacing: 1px;
 }
 
@@ -112,15 +112,18 @@
     display: block;
   }
 
-  .nav-toggle-close span,
-  .nav-toggle-open span {
-    font-size: var(--font-size-xl);
+  .nav-toggle-close svg,
+  .nav-toggle-open svg {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.2s ease;
   }
 
   .nav-toggle-close {
     position: absolute;
     top: 75px;
     right: 30px;
+    color: var(--text-main);
   }
 
   .nav-toggle-open {
