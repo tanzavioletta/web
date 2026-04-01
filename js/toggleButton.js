@@ -1,36 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navMenuWrapper = document.getElementById("nav-menu");
-  const btnOpen = document.getElementById("nav-toggle-open");
-  const btnClose = document.getElementById("nav-toggle-close");
+  // Elementos del menú
+  const menuToggle = document.getElementById("menu-toggle");
+  const openButton = document.querySelector(".nav-toggle-open");
+  const navLinks = document.querySelectorAll(".nav-link");
 
-  // --- Lógica para abrir y cerrar el menú ---
-  btnOpen.addEventListener("click", () => {
-    navMenuWrapper.classList.add("show-mobile-menu");
-    btnOpen.setAttribute("aria-expanded", "true"); // Accesibilidad: indica que está abierto
+  // Función para cerrar el menú (desmarcar el checkbox)
+  const closeMenu = () => {
+    if (menuToggle && menuToggle.checked) {
+      menuToggle.checked = false;
+      if (openButton) openButton.setAttribute("aria-expanded", "false");
+    }
+  };
+
+  // Cerrar el menú al hacer clic en cualquier enlace de navegación
+  navLinks.forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 
-  btnClose.addEventListener("click", () => {
-    navMenuWrapper.classList.remove("show-mobile-menu");
-    btnOpen.setAttribute("aria-expanded", "false"); // Accesibilidad: indica que está cerrado
-  });
+  // Sincronizar el atributo aria-expanded con el estado del checkbox
+  if (menuToggle) {
+    menuToggle.addEventListener("change", () => {
+      const isExpanded = menuToggle.checked;
+      if (openButton) openButton.setAttribute("aria-expanded", isExpanded);
+    });
+    // Estado inicial
+    if (openButton) openButton.setAttribute("aria-expanded", "false");
+  }
 
-  // --- Solución al parpadeo (flash) al redimensionar la pantalla ---
+  // Evitar parpadeos en redimensionado y cerrar si pasa a escritorio
   let resizeTimer;
   window.addEventListener("resize", () => {
-    // Agregamos la clase que quita las transiciones mientras se mueve la ventana
     document.body.classList.add("resize-animation-stopper");
-
-    // Limpiamos el temporizador si el usuario sigue moviendo la ventana
     clearTimeout(resizeTimer);
-
-    // Quitamos la clase 400ms después de que el usuario dejó de redimensionar
     resizeTimer = setTimeout(() => {
       document.body.classList.remove("resize-animation-stopper");
-
-      // Opcional: Cerrar el menú automáticamente si volvemos a vista de escritorio
-      if (window.innerWidth > 955) {
-        navMenuWrapper.classList.remove("show-mobile-menu");
-        btnOpen.setAttribute("aria-expanded", "false");
+      if (window.innerWidth > 955 && menuToggle && menuToggle.checked) {
+        closeMenu();
       }
     }, 400);
   });
