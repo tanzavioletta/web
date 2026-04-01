@@ -645,6 +645,7 @@ img {
   gap: 0.3rem;
   font-size: var(--font-size-m);
   text-decoration: none;
+  flex-direction: column;
 }
 
 .social-links a:hover {
