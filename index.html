@@ -131,10 +131,9 @@
     </header>
     <!-- END Header -->
     <main>
-      <!-- Hero -->
-      <div class="hero">
+      <section class="hero" aria-labelledby="hero-title">
         <div class="hero-banner">
-          <h1 class="title">¿Hablamos?</h1>
+          <h1 id="hero-title" class="title">¿Hablamos?</h1>
           <h2 class="subtitle">
             Espacio de escucha activa y acompañamiento emocional
           </h2>
@@ -149,6 +148,8 @@
               class="button btn-reserva"
               href="https://calendar.app.google/zDzYzwQFqyA4HkLR8"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Reservar consulta en Google Calendar (abre en una nueva pestaña)"
             >
               Reservar consulta
             </a>
@@ -157,60 +158,62 @@
               class="button btn-wp"
               href="https://wa.me/541151558006"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Escribime por WhatsApp (abre en una nueva pestaña)"
             >
               Escribime
             </a>
           </div>
         </div>
-      </div>
-      <!-- END hero -->]
-      <!-- About me -->
+      </section>
+      <section class="section about" id="about" aria-labelledby="about-title">
+        <div class="section-title">
+          <h2 id="about-title">Sobre <span>mí</span></h2>
+        </div>
 
-      <!-- ENDAbout me -->
-    </main>
-
-    <section class="section about" id="about">
-      <div class="section-title">
-        <h2>Sobre <span> mí</span></h2>
-      </div>
-
-      <div class="section-center about-center">
-        <article class="about-img">
-          <img src="assets/coni_sassali.jpeg" alt="Coni Sassali" />
-        </article>
-        <article class="about-info">
-          <h3 class="title">
-            Coni Sassali -<span> Consultora Psicológica · Counselor</span>
-          </h3>
-
-          <div class="description">
-            <p>
-              Acompaño a adolescentes desde los 16 años y adultos que atraviesan
-              momentos de crisis personal, cambios importantes o situaciones que
-              generan malestar emocional.
-            </p>
-
-            <p>
-              Mi trabajo se basa en la escucha activa, el respeto por la
-              experiencia subjetiva de cada persona y la creación de un espacio
-              de conversación donde sea posible hablar con libertad y sin
-              juicios.
-            </p>
-
-            <p>
-              El objetivo del acompañamiento es ayudar a clarificar lo que
-              sucede, comprender emociones y abrir nuevas formas de mirar la
-              propia experiencia.
-            </p>
-
-            <p>
-              Las consultas se realizan de manera virtual, lo que permite
-              sostener el espacio desde cualquier lugar.
-            </p>
+        <div class="section-center about-center">
+          <div class="about-img">
+            <img
+              src="assets/coni_sassali.jpeg"
+              alt="Retrato de Coni Sassali, Consultora Psicológica y Counselor"
+              loading="lazy"
+            />
           </div>
-        </article>
-      </div>
-    </section>
+
+          <div class="about-info">
+            <h3 class="title">
+              Coni Sassali - <span>Consultora Psicológica · Counselor</span>
+            </h3>
+
+            <div class="description">
+              <p>
+                Acompaño a adolescentes desde los 16 años y adultos que
+                atraviesan momentos de crisis personal, cambios importantes o
+                situaciones que generan malestar emocional.
+              </p>
+
+              <p>
+                Mi trabajo se basa en la escucha activa, el respeto por la
+                experiencia subjetiva de cada persona y la creación de un
+                espacio de conversación donde sea posible hablar con libertad y
+                sin juicios.
+              </p>
+
+              <p>
+                El objetivo del acompañamiento es ayudar a clarificar lo que
+                sucede, comprender emociones y abrir nuevas formas de mirar la
+                propia experiencia.
+              </p>
+
+              <p>
+                Las consultas se realizan de manera virtual, lo que permite
+                sostener el espacio desde cualquier lugar.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <section>
       <h2>El espacio de acompañamiento</h2>
