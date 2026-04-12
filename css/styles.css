@@ -245,10 +245,15 @@ img {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  align-items: center;
 }
 
 .hero-banner .title {
   text-transform: uppercase;
+}
+
+.hero h2 {
+  font-weight: 400;
 }
 
 .hero-banner .description {
@@ -630,6 +635,24 @@ img {
   font-size: var(--font-size-n);
 }
 
+.footer .country-list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem;
+}
+.footer .country-list span {
+  margin-right: 5px;
+  border-radius: 2px;
+}
+.country-extra{
+  font-weight: 800;
+}
+
+.footer .derechos{
+  display: block;
+  margin: 2rem;
+}
 .social-links {
   display: flex;
   justify-content: center;
@@ -664,6 +687,12 @@ img {
 
 /* ========== RESPONSIVE EXTRA ========== */
 @media (max-width: 768px) {
+  .footer .country-list {
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los <li> a la izquierda de su contenedor */
+    width: fit-content;      /* Hace que el contenedor mida solo lo necesario */
+    margin: 1rem auto;       /* Centra el contenedor entero respecto al footer */
+  }
   .step-card {
     flex-basis: 100%;
   }
@@ -678,4 +707,48 @@ img {
   .faq-answer {
     padding-left: 1rem;
   }
+}
+
+/* ========== ESPECIALIDADES ========== */
+.specialties-grid {
+  display: grid;
+  /* Crea columnas responsivas automáticas con un ancho mínimo de 250px */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.specialty-card {
+  background-color: var(--white-color);
+  padding: 2rem 1.5rem;
+  border-radius: var(--border-radius-s);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  /* Un detalle visual en la parte superior para destacar la tarjeta */
+  border-top: 4px solid var(--accent-purple);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.specialty-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.specialty-card h3 {
+  color: var(--accent-magenta);
+  font-size: var(--font-size-m);
+  margin-bottom: 1rem;
+  font-weight: var(--font-weight-semibold);
+}
+
+.specialty-card p {
+  color: var(--text-muted);
+  font-size: var(--font-size-s);
+  line-height: 1.6;
+  margin: 0;
 }
