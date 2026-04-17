@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="es">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
+
     <meta
       name="description"
       content="Consultoría psicológica virtual para mujeres, parejas y adultos. Especialista en crisis, divorcios, violencia familiar y acompañamiento LGBT+. Habla hispana."
@@ -13,7 +13,8 @@
       content="consultoría psicológica online, psicólogo online alternativo, counseling, terapia de pareja, acompañamiento mujeres, lgbt friendly, counselor virtual"
     />
     <meta name="author" content="Coni Sassali" />
-    
+
+    <!-- Open Graph -->
     <meta
       property="og:title"
       content="Coni Sassali | Consultora Psicológica Online y Acompañamiento"
@@ -23,17 +24,19 @@
       content="Espacio de escucha activa y acompañamiento emocional. Consultas virtuales para mujeres, parejas y adultos de toda habla hispana."
     />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://consultoriapsicologicaonline.com.ar" />
-    
+    <meta
+      property="og:url"
+      content="https://consultoriapsicologicaonline.com.ar"
+    />
+    <meta property="og:locale" content="es_AR" />
+
     <link rel="canonical" href="https://consultoriapsicologicaonline.com.ar" />
 
     <link rel="stylesheet" href="css/styles.css" />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -44,9 +47,11 @@
       href="assets/Logo-coni-sin-texto.png"
       type="image/x-icon"
     />
-    
-    <title>Consultoría Psicológica Online | Coni Sassali | Espacio Seguro</title>
-    
+
+    <title>
+      Consultoría Psicológica Online | Coni Sassali | Espacio Seguro
+    </title>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,12 +60,12 @@
         "jobTitle": "Counselor",
         "description": "Consultoría psicológica virtual. Acompañamiento emocional, terapia de pareja, violencia de género y espacio LGBT+ friendly.",
         "areaServed": [
-          {"@type": "Country", "name": "Argentina"},
-          {"@type": "Country", "name": "Peru"},
-          {"@type": "Country", "name": "Spain"},
-          {"@type": "Country", "name": "Mexico"},
-          {"@type": "Country", "name": "Chile"},
-          {"@type": "Country", "name": "Colombia"}
+          { "@type": "Country", "name": "Argentina" },
+          { "@type": "Country", "name": "Peru" },
+          { "@type": "Country", "name": "Spain" },
+          { "@type": "Country", "name": "Mexico" },
+          { "@type": "Country", "name": "Chile" },
+          { "@type": "Country", "name": "Colombia" }
         ],
         "knowsAbout": [
           "Terapia de pareja",
@@ -82,46 +87,70 @@
       }
     </script>
   </head>
+
   <body>
+    <!-- ====== SKIP LINK (accesibilidad: teclado) ====== -->
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
     <header class="header">
-      <nav class="navbar section-content">
+      <nav class="navbar section-content" aria-label="Navegación principal">
         <div class="navbar-logo">
           <a href="#" aria-label="Ir al inicio">
             <img
               class="logo-img"
               src="assets/Logo.webp"
-              alt="Conni Sassali - Consultoría psicológica (counseling)"
+              alt="Coni Sassali – Consultoría psicológica online"
             />
           </a>
         </div>
 
         <!-- Checkbox oculto para controlar el menú móvil -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-        <label
-          for="menu-toggle"
+        <input
+          type="checkbox"
+          id="menu-toggle"
+          class="menu-toggle"
+          aria-hidden="true"
+          tabindex="-1"
+        />
+
+        <button
           class="nav-toggle-open"
-          aria-label="Abrir menú"
+          id="nav-open-btn"
+          aria-controls="nav-menu-wrapper"
+          aria-expanded="false"
+          aria-label="Abrir menú de navegación"
+          type="button"
         >
           <svg
             class="icon-menu"
             aria-hidden="true"
+            focusable="false"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
           >
             <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
           </svg>
-        </label>
+        </button>
 
-        <div class="nav-menu-wrapper">
-          <label
-            for="menu-toggle"
+        <div
+          class="nav-menu-wrapper"
+          id="nav-menu-wrapper"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menú de navegación"
+          hidden
+        >
+          <button
             class="nav-toggle-close"
-            aria-label="Cerrar menú"
+            id="nav-close-btn"
+            aria-label="Cerrar menú de navegación"
+            type="button"
           >
             <svg
               class="icon-close"
               aria-hidden="true"
+              focusable="false"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
@@ -130,8 +159,9 @@
                 d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
               />
             </svg>
-          </label>
-          <ul class="nav-menu">
+          </button>
+
+          <ul class="nav-menu" id="nav-menu" role="list">
             <li class="nav-item">
               <a class="nav-link" href="#about">Sobre mí</a>
             </li>
@@ -139,8 +169,8 @@
               <a class="nav-link" href="#espacio">Nuestro espacio</a>
             </li>
             <li class="nav-item">
-  <a class="nav-link" href="#especialidades">Especialidades</a>
-</li>
+              <a class="nav-link" href="#especialidades">Especialidades</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#consultas">Consultas</a>
             </li>
@@ -152,15 +182,21 @@
             </li>
           </ul>
         </div>
+
+        <!-- Overlay para cerrar el menú al hacer clic fuera -->
+        <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
+      <!-- ====== HERO ====== -->
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-banner">
           <h1 id="hero-title" class="title">¿Hablamos?</h1>
           <h2 class="subtitle">
-            Espacio de escucha activa y acompañamiento emocional online para <strong>Argentina</strong>, <strong> Perú</strong>, <strong>España</strong> y <strong>toda habla hispana.</strong> 
+            Espacio de escucha activa y acompañamiento emocional online para
+            <strong>Argentina</strong>, <strong>Perú</strong>,
+            <strong>España</strong> y <strong>toda habla hispana.</strong>
           </h2>
           <p class="description">
             Consultas de consultoría psicológica (counseling) realizadas de
@@ -187,6 +223,7 @@
         </div>
       </section>
 
+      <!-- ====== SOBRE MÍ ====== -->
       <section class="section about" id="about" aria-labelledby="about-title">
         <div class="section-title">
           <h2 id="about-title">Sobre <span>mí</span></h2>
@@ -197,11 +234,14 @@
               src="assets/coni_sassali.jpeg"
               alt="Retrato de Coni Sassali, Consultora Psicológica y Counselor"
               loading="lazy"
+              width="600"
+              height="600"
             />
           </div>
           <div class="about-info">
             <h3 class="title">
-              Coni Sassali - <span>Consultora Psicológica · Counselor</span>
+              Coni Sassali –
+              <span>Consultora Psicológica · Counselor</span>
             </h3>
             <div class="description">
               <p>
@@ -228,97 +268,106 @@
           </div>
         </div>
       </section>
-      
 
+      <!-- ====== ESPACIO DE ACOMPAÑAMIENTO ====== -->
       <section class="section" id="espacio" aria-labelledby="espacio-title">
         <div class="section-title">
           <h2 id="espacio-title">El espacio de <span>acompañamiento</span></h2>
         </div>
         <div class="section-center">
-          <p
-            style="
-              text-align: center;
-              margin-bottom: 1rem;
-              font-size: var(--font-size-m);
-            "
-          >
+          <p class="section-intro">
             Este espacio puede ser útil cuando estás atravesando:
           </p>
-          <div class="topics-list">
-            <div class="topic-item">
-              <i class="fas fa-exclamation-triangle"></i>
+          <ul class="topics-list" role="list">
+            <li class="topic-item">
+              <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
               <p>momentos de crisis personal</p>
-            </div>
-            <div class="topic-item">
-              <i class="fas fa-frown"></i>
+            </li>
+            <li class="topic-item">
+              <i class="fas fa-frown" aria-hidden="true"></i>
               <p>angustia o incertidumbre</p>
-            </div>
-            <div class="topic-item">
-              <i class="fas fa-sync-alt"></i>
+            </li>
+            <li class="topic-item">
+              <i class="fas fa-sync-alt" aria-hidden="true"></i>
               <p>procesos de cambio</p>
-            </div>
-            <div class="topic-item">
-              <i class="fas fa-brain"></i>
+            </li>
+            <li class="topic-item">
+              <i class="fas fa-brain" aria-hidden="true"></i>
               <p>decisiones importantes</p>
-            </div>
-            <div class="topic-item">
-              <i class="fas fa-users"></i>
+            </li>
+            <li class="topic-item">
+              <i class="fas fa-users" aria-hidden="true"></i>
               <p>conflictos vinculares</p>
-            </div>
-            <div class="topic-item">
-              <i class="fas fa-heart-broken"></i>
+            </li>
+            <li class="topic-item">
+              <i class="fas fa-heart-broken" aria-hidden="true"></i>
               <p>duelos o pérdidas</p>
-            </div>
-            <div class="topic-item">
-              <i class="fas fa-comment-dots"></i>
+            </li>
+            <li class="topic-item">
+              <i class="fas fa-comment-dots" aria-hidden="true"></i>
               <p>necesidad de hablar y ordenar pensamientos</p>
-            </div>
-          </div>
-          <p
-            style="
-              text-align: center;
-              margin-top: 2rem;
-              font-style: italic;
-              color: var(--text-muted);
-            "
-          >
+            </li>
+          </ul>
+          <p class="section-note">
             Cada proceso es único. El acompañamiento se construye respetando el
             tiempo, la experiencia y las necesidades de cada persona.
           </p>
         </div>
       </section>
 
-     <section class="section" id="especialidades" aria-labelledby="especialidades-title">
+      <!-- ====== ESPECIALIDADES ====== -->
+      <section
+        class="section"
+        id="especialidades"
+        aria-labelledby="especialidades-title"
+      >
         <div class="section-title">
-          <h2 id="especialidades-title">Áreas de <span>Especialización</span></h2>
+          <h2 id="especialidades-title">
+            Áreas de <span>Especialización</span>
+          </h2>
         </div>
         <div class="section-center">
           <div class="specialties-grid">
             <article class="specialty-card">
-              <i class="fas fa-female" style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 1rem;" aria-hidden="true"></i>
+              <i class="fas fa-female specialty-icon" aria-hidden="true"></i>
               <h3>Mujeres y Maternidad</h3>
-              <p>Acompañamiento emocional para madres y mujeres frente a las exigencias, transiciones y crisis vitales.</p>
+              <p>
+                Acompañamiento emocional para madres y mujeres frente a las
+                exigencias, transiciones y crisis vitales.
+              </p>
             </article>
             <article class="specialty-card">
-              <i class="fas fa-user-friends" style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 1rem;" aria-hidden="true"></i>
+              <i
+                class="fas fa-user-friends specialty-icon"
+                aria-hidden="true"
+              ></i>
               <h3>Parejas y Divorcios</h3>
-              <p>Un espacio de mediación y escucha para atravesar conflictos vinculares, separaciones o reorganización familiar.</p>
+              <p>
+                Un espacio de mediación y escucha para atravesar conflictos
+                vinculares, separaciones o reorganización familiar.
+              </p>
             </article>
             <article class="specialty-card">
-              <i class="fas fa-rainbow" style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 1rem;" aria-hidden="true"></i>
+              <i class="fas fa-rainbow specialty-icon" aria-hidden="true"></i>
               <h3>Espacio Seguro y LGBT+</h3>
-              <p>Consultoría libre de juicios para acompañar procesos de identidad, diversidad sexual y vínculos afectivos.</p>
+              <p>
+                Consultoría libre de juicios para acompañar procesos de
+                identidad, diversidad sexual y vínculos afectivos.
+              </p>
             </article>
             <article class="specialty-card">
-              <i class="fas fa-home" style="font-size: 2.5rem; color: var(--accent-purple); margin-bottom: 1rem;" aria-hidden="true"></i>
+              <i class="fas fa-home specialty-icon" aria-hidden="true"></i>
               <h3>Acompañamiento Familiar</h3>
-              <p>Apoyo terapéutico para quienes conviven o acompañan a familiares con discapacidad, aliviando la sobrecarga emocional.</p>
+              <p>
+                Apoyo terapéutico para quienes conviven o acompañan a familiares
+                con discapacidad, aliviando la sobrecarga emocional.
+              </p>
             </article>
           </div>
         </div>
       </section>
 
-
+      <!-- ====== CÓMO FUNCIONAN LAS CONSULTAS ====== -->
       <section class="section" id="consultas" aria-labelledby="consultas-title">
         <div class="section-title">
           <h2 id="consultas-title">
@@ -326,34 +375,38 @@
           </h2>
         </div>
         <div class="section-center">
-          <p style="text-align: center; max-width: 700px; margin: 0 auto 1rem">
+          <p class="text-center-block">
             Las consultas se realizan de forma virtual mediante videollamada.
             Cada encuentro tiene una duración aproximada de 50 minutos y se
             desarrolla en un espacio de conversación confidencial y respetuoso.
           </p>
-          <div class="steps-container">
-            <div class="step-card">
-              <div class="step-number">1</div>
+          <ol
+            class="steps-container"
+            aria-label="Pasos para reservar una consulta"
+          >
+            <li class="step-card">
+              <div class="step-number" aria-hidden="true">1</div>
               <h4>Reservá tu turno</h4>
               <p>
                 A través del calendario online, elegí el horario que mejor se
                 adapte a vos.
               </p>
-            </div>
-            <div class="step-card">
-              <div class="step-number">2</div>
+            </li>
+            <li class="step-card">
+              <div class="step-number" aria-hidden="true">2</div>
               <h4>Recibí el enlace</h4>
               <p>Te llegará la invitación para la videollamada segura.</p>
-            </div>
-            <div class="step-card">
-              <div class="step-number">3</div>
+            </li>
+            <li class="step-card">
+              <div class="step-number" aria-hidden="true">3</div>
               <h4>Nos encontramos</h4>
               <p>Conectamos en el espacio virtual para conversar sin prisas.</p>
-            </div>
-          </div>
+            </li>
+          </ol>
         </div>
       </section>
 
+      <!-- ====== PROPUESTA GRUPAL ====== -->
       <section class="section" id="grupal" aria-labelledby="grupal-title">
         <div class="section-title">
           <h2 id="grupal-title">Propuesta <span>grupal</span></h2>
@@ -376,14 +429,14 @@
               participante pueda explorar su propia voz, revisar creencias,
               ampliar miradas y fortalecer el autoconocimiento.
             </p>
-            <h4 style="margin-top: 1.5rem">Características del espacio</h4>
-            <ul class="features-list">
+            <h4 class="grupal-sub-title">Características del espacio</h4>
+            <ul class="features-list" role="list">
               <li>modalidad virtual</li>
               <li>encuentros semanales</li>
               <li>duración 90 minutos</li>
               <li>grupos reducidos</li>
             </ul>
-            <p style="margin-top: 1rem">
+            <p class="grupal-footer-note">
               Las personas interesadas pueden solicitar una entrevista inicial
               para conocer el funcionamiento del espacio grupal.
             </p>
@@ -391,12 +444,13 @@
         </div>
       </section>
 
+      <!-- ====== RESERVAR CONSULTA ====== -->
       <section class="section" id="reservar" aria-labelledby="reservar-title">
         <div class="section-title">
           <h2 id="reservar-title">Reservar <span>consulta</span></h2>
         </div>
         <div class="section-center">
-          <p style="text-align: center; max-width: 650px; margin: 0 auto">
+          <p class="text-center-block">
             Puedes reservar tu turno directamente desde el calendario online
             donde podrás ver los horarios disponibles. Si prefieres consultar
             antes, también puedes escribir por WhatsApp.
@@ -420,159 +474,190 @@
         </div>
       </section>
 
+      <!-- ====== FAQ ====== -->
+      <!--
+        Usando <details>/<summary> nativo: semántico, accesible
+        y funcional sin JavaScript. El atributo `name` agrupa
+        los items para comportamiento acordeón (navegadores modernos).
+      -->
       <section class="section" id="faq" aria-labelledby="faq-title">
         <div class="section-title">
           <h2 id="faq-title">Preguntas <span>frecuentes</span></h2>
         </div>
         <div class="section-center">
           <div class="faq-list">
-            <div class="faq-item">
-              <div class="faq-question">
-                <i class="fas fa-question-circle"></i> ¿Qué es la consultoría
-                psicológica?
-              </div>
-              <div class="faq-answer">
+            <details class="faq-item" name="faq">
+              <summary class="faq-question">
+                <i class="fas fa-question-circle" aria-hidden="true"></i>
+                ¿Qué es la consultoría psicológica?
+              </summary>
+              <p class="faq-answer">
                 La consultoría psicológica, también conocida como counseling, es
                 un espacio de acompañamiento basado en la conversación, la
                 escucha activa y la reflexión. Está orientada a trabajar
                 situaciones personales, emocionales o vinculares, ayudando a
                 comprender lo que sucede y a encontrar nuevas perspectivas sobre
                 la propia experiencia.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <i class="fas fa-lock"></i> ¿Las consultas son confidenciales?
-              </div>
-              <div class="faq-answer">
+              </p>
+            </details>
+
+            <details class="faq-item" name="faq">
+              <summary class="faq-question">
+                <i class="fas fa-lock" aria-hidden="true"></i>
+                ¿Las consultas son confidenciales?
+              </summary>
+              <p class="faq-answer">
                 Sí. Las consultas se desarrollan dentro de un marco de
                 confidencialidad y respeto por la privacidad de cada persona,
                 creando un espacio seguro donde es posible hablar con libertad.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <i class="fas fa-video"></i> ¿Cómo son las consultas?
-              </div>
-              <div class="faq-answer">
+              </p>
+            </details>
+
+            <details class="faq-item" name="faq">
+              <summary class="faq-question">
+                <i class="fas fa-video" aria-hidden="true"></i>
+                ¿Cómo son las consultas?
+              </summary>
+              <p class="faq-answer">
                 Las consultas se realizan mediante videollamada y tienen una
                 duración aproximada de 50 minutos. Se trata de un espacio de
                 conversación donde puedes detenerte a pensar lo que estás
                 atravesando y explorar nuevas formas de comprenderlo.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <i class="fas fa-users"></i> ¿Quiénes pueden consultar?
-              </div>
-              <div class="faq-answer">
+              </p>
+            </details>
+
+            <details class="faq-item" name="faq">
+              <summary class="faq-question">
+                <i class="fas fa-users" aria-hidden="true"></i>
+                ¿Quiénes pueden consultar?
+              </summary>
+              <p class="faq-answer">
                 El espacio está dirigido a adolescentes a partir de los 16 años
                 y adultos que deseen contar con un lugar de escucha y
                 acompañamiento.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <i class="fas fa-laptop"></i> ¿Las consultas son presenciales o
-                virtuales?
-              </div>
-              <div class="faq-answer">
+              </p>
+            </details>
+
+            <details class="faq-item" name="faq">
+              <summary class="faq-question">
+                <i class="fas fa-laptop" aria-hidden="true"></i>
+                ¿Las consultas son presenciales o virtuales?
+              </summary>
+              <p class="faq-answer">
                 Actualmente el espacio funciona de forma completamente virtual,
                 lo que permite realizar las consultas desde cualquier lugar con
                 acceso a internet.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <i class="fas fa-globe"></i> ¿Puedo consultar si vivo fuera de
-                Argentina?
-              </div>
-              <div class="faq-answer">
+              </p>
+            </details>
+
+            <details class="faq-item" name="faq">
+              <summary class="faq-question">
+                <i class="fas fa-globe" aria-hidden="true"></i>
+                ¿Puedo consultar si vivo fuera de Argentina?
+              </summary>
+              <p class="faq-answer">
                 Sí. El espacio está abierto a personas de toda habla hispana,
                 independientemente del país en el que se encuentren.
-              </div>
-            </div>
-            <div class="faq-item">
-              <div class="faq-question">
-                <i class="fas fa-calendar-alt"></i> ¿Cómo puedo reservar un
-                turno?
-              </div>
-              <div class="faq-answer">
+              </p>
+            </details>
+
+            <details class="faq-item" name="faq">
+              <summary class="faq-question">
+                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                ¿Cómo puedo reservar un turno?
+              </summary>
+              <p class="faq-answer">
                 Los turnos se coordinan a través del calendario online, donde
                 puedes ver los horarios disponibles y reservar directamente. Si
                 lo prefieres, también puedes escribir por WhatsApp para realizar
                 una consulta previa.
-              </div>
-            </div>
+              </p>
+            </details>
           </div>
         </div>
       </section>
 
+      <!-- ====== CONTACTO ====== -->
       <section class="section" id="contacto" aria-labelledby="contacto-title">
         <div class="section-title">
           <h2 id="contacto-title"><span>Contacto</span></h2>
         </div>
         <div class="section-center">
-          <p style="text-align: center; max-width: 600px; margin: 0 auto">
+          <p class="text-center-block">
             Si sientes que necesitas un espacio para hablar, puedes reservar un
             turno o escribir para realizar una consulta.
           </p>
-          <div class="social-links">
-          <a
-            href="https://wa.me/541151558006"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><i class="fab fa-whatsapp"></i> WhatsApp</a
-          >
-          <a
-            href="https://instagram.com/conisassali"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><i class="fab fa-instagram"></i> Instagram</a
-          >
-          <a
-            href="https://calendar.app.google/zDzYzwQFqyA4HkLR8"
-            target="_blank"
-            rel="noopener noreferrer"
-            ><i class="fas fa-calendar-alt"></i> Agenda tu cita</a
-          >
-        </div>
-        <div class="copyright">
+          <nav class="social-links" aria-label="Redes sociales y contacto">
+            <a
+              href="https://wa.me/541151558006"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contactar por WhatsApp (abre en nueva pestaña)"
+            >
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              WhatsApp
+            </a>
+            <a
+              href="https://instagram.com/conisassali"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver Instagram de Coni Sassali (abre en nueva pestaña)"
+            >
+              <i class="fab fa-instagram" aria-hidden="true"></i>
+              Instagram
+            </a>
+            <a
+              href="https://calendar.app.google/zDzYzwQFqyA4HkLR8"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Agendar cita en calendario online (abre en nueva pestaña)"
+            >
+              <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+              Agenda tu cita
+            </a>
+          </nav>
         </div>
       </section>
     </main>
 
-   <footer class="footer">
+    <footer class="footer">
       <div class="footer-content">
         <div class="footer-logo">
-          <img src="assets/Logo.webp" alt="Coni Sassali Logo" loading="lazy" />
+          <img
+            src="assets/Logo.webp"
+            alt="Coni Sassali – logo"
+            loading="lazy"
+            width="80"
+            height="80"
+          />
         </div>
         <p class="footer-name">Coni Sassali</p>
         <p>Consultora Psicológica · Counselor</p>
         <p>Consultoría psicológica virtual</p>
-        
+
         <div class="footer-countries">
           <p>Atención online disponible para:</p>
-          <ul class="country-list">
-            <li><span class="fi fi-ar"></span> Argentina</li>
-            <li><span class="fi fi-pe"></span> Perú</li>
-            <li><span class="fi fi-es"></span> España</li>
-            <li><span class="fi fi-mx"></span> México</li>
-            <li><span class="fi fi-cl"></span> Chile</li>
-            <li><span class="fi fi-co"></span> Colombia</li>
+          <ul class="country-list" role="list">
+            <li><span class="fi fi-ar" aria-hidden="true"></span> Argentina</li>
+            <li><span class="fi fi-pe" aria-hidden="true"></span> Perú</li>
+            <li><span class="fi fi-es" aria-hidden="true"></span> España</li>
+            <li><span class="fi fi-mx" aria-hidden="true"></span> México</li>
+            <li><span class="fi fi-cl" aria-hidden="true"></span> Chile</li>
+            <li><span class="fi fi-co" aria-hidden="true"></span> Colombia</li>
           </ul>
           <p class="country-extra">y toda la comunidad hispanohablante.</p>
         </div>
 
         <p class="derechos">
-          &copy; <span id="currentYear"></span> Coni Sassali. Todos los derechos reservados.
+          &copy; <span id="currentYear"></span> Coni Sassali. Todos los derechos
+          reservados.
         </p>
       </div>
     </footer>
 
     <script src="js/toggleButton.js"></script>
     <script>
-      document.getElementById("currentYear").innerText =
+      document.getElementById("currentYear").textContent =
         new Date().getFullYear();
     </script>
   </body>
